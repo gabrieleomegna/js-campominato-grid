@@ -20,13 +20,13 @@ header nav h1 {
     font-size: 2.5rem;
     font-weight: 800;
 }
-header nav button {
+header nav button#play {
     padding: .1rem 1.8rem;
     border-radius: 5px;
     font-weight: 700;
     border: 2px solid rgb(207, 207, 207);
 }
-header nav button:hover {
+header nav button#play:hover {
     background-color: rgb(224, 224, 224);
 }
 
@@ -34,7 +34,19 @@ main {
     background-color: rgb(127, 255, 212);
 }
 main .wrapper {
-    width: 70%;
+    width: 700px;
+    height: 700px;
     margin: 0 auto;
     padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square-item {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
+.display-none {
+    display: none;
 }
