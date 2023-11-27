@@ -11,11 +11,11 @@
 const wrapperElement = document.querySelector('div.wrapper');
 
 const btnPlayElement = document.querySelector('button#play');
-const gridElement = gridGenerator (100, wrapperElement);
+
 
 btnPlayElement.addEventListener('click',
 function () {
-    gridElement.classList.toggle('display-none')
+    gridGenerator (100, wrapperElement);
 })
 
 
@@ -33,8 +33,7 @@ function () {
 function gridGenerator(numberOfSquares, parent) {
     for (let i = 0; i < numberOfSquares; i++) {
         const squareElement = document.createElement('div');
-        squareElement.classList.toggle('square-item');
-        squareElement.classList.toggle('display-none');
+        squareElement.classList.add('square-item');
         parent.appendChild(squareElement);
     }
 }
