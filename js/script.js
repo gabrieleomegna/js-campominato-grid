@@ -5,35 +5,34 @@
 // ed emetto un messaggio in console con il numero della cella cliccata.
 
 
-// ! Aggiungo un EventListener al bottone play
-  // ! genero una griglia quadrata 10x10
-
-const wrapperElement = document.querySelector('div.wrapper');
-
-const btnPlayElement = document.querySelector('button#play');
-
-
-btnPlayElement.addEventListener('click',
-function () {
-    gridGenerator (100, wrapperElement);
-})
-
-
-
-
-
-
-// ! Aggiungo un event listener per ogni cella in cui:
-  // ! la cella si colora di azzurro
-  // ! emetto un messaggio in console in cui viene scritto il numero della cella corrispondente
-
-
-// wrapperElement.appendChild(gridGenerator(100));
-
+// btnPlayElement.addEventListener('click',
+// function () {
+    //     gridGenerator (100, wrapperElement);
+    // })
+    
+    
 function gridGenerator(numberOfSquares, parent) {
     for (let i = 0; i < numberOfSquares; i++) {
         const squareElement = document.createElement('div');
         squareElement.classList.add('square-item');
         parent.appendChild(squareElement);
     }
+}
+    
+    
+// ! Aggiungo un EventListener al bottone play
+    // ! genero una griglia quadrata 10x10
+    
+    
+    
+// ! Aggiungo un event listener per ogni cella in cui:
+    // ! la cella si colora di azzurro
+    // ! emetto un messaggio in console in cui viene scritto il numero della cella corrispondente
+
+const wrapperElement = document.querySelector('div.wrapper');
+const btnPlayElement = document.querySelector('button#play');
+
+function squareGenerator () {
+    const squareElement = document.createElement('div');
+    squareElement.classList.add('square-item');
 }
