@@ -36,9 +36,20 @@ btnPlayElement.addEventListener('click',
 function () {
     wrapperElement.innerHTML = ''
     for (let i = 1; i <= 100; i++) {
-        const gridElement = squareGenerator()
-        wrapperElement.appendChild(gridElement);
-        const numberInsideSquare = gridElement.append(i);
+        const squareItem = squareGenerator();
+        wrapperElement.appendChild(squareItem);
+        
+        const squareContent = document.createElement('span');
+        const numberInsideSquare = squareItem.append(squareContent);
+        squareContent.append(Math.floor(Math.random() * 100 + 1));
+        squareContent.classList.add('display-none')
+
+        squareItem.addEventListener('click', 
+        function() {
+            squareItem.classList.add('bg-lightblue');
+            squareContent.classList.remove('display-none');
+            console.log(squareContent.innerHTML)
+        })
     }
 })
 
@@ -47,10 +58,6 @@ function () {
 function squareGenerator () {
     const squareElement = document.createElement('div');
     squareElement.classList.add('square-item');
-    squareElement.addEventListener('click', 
-    function() {
-        squareElement.classList.add('bg-lightblue');
-        console.log(squareElement.innerHTML)
-    })
+    
     return squareElement
 }
