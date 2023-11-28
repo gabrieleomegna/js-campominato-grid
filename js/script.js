@@ -49,7 +49,7 @@ function generateNewGame (wrapperElement) {
         
         const squareContent = document.createElement('span');
         const numberInsideSquare = squareItem.append(squareContent);
-        squareContent.innerText = Math.floor(Math.random() * 100 + 1);
+        squareContent.innerText = getRandomNumber(1,100);
         squareContent.classList.add('display-none')
 
         squareItem.addEventListener('click', 
@@ -66,4 +66,7 @@ function squareGenerator () {
     squareElement.classList.add('square-item');
     
     return squareElement
+}
+function getRandomNumber (min,max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
