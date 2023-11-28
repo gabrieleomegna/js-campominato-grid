@@ -29,11 +29,19 @@ function gridGenerator(numberOfSquares, parent) {
     // ! la cella si colora di azzurro
     // ! emetto un messaggio in console in cui viene scritto il numero della cella corrispondente
 
-const wrapperElement = document.querySelector('div.wrapper');
+const mainContentElement = document.querySelector('div.main-content');
 const btnPlayElement = document.querySelector('button#play');
 
 btnPlayElement.addEventListener('click', 
 function () {
+    generateNewGame(mainContentElement);
+})
+
+
+
+
+
+function generateNewGame (wrapperElement) {
     wrapperElement.innerHTML = ''
     for (let i = 1; i <= 100; i++) {
         const squareItem = squareGenerator();
@@ -41,19 +49,17 @@ function () {
         
         const squareContent = document.createElement('span');
         const numberInsideSquare = squareItem.append(squareContent);
-        squareContent.append(Math.floor(Math.random() * 100 + 1));
+        squareContent.innerText = Math.floor(Math.random() * 100 + 1);
         squareContent.classList.add('display-none')
 
         squareItem.addEventListener('click', 
         function() {
             squareItem.classList.add('bg-lightblue');
             squareContent.classList.remove('display-none');
-            console.log(squareContent.innerHTML)
+            console.log(squareContent.innerHTML);
         })
     }
-})
-
-
+}
 
 function squareGenerator () {
     const squareElement = document.createElement('div');

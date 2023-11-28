@@ -33,7 +33,7 @@ header nav button#play:hover {
 main {
     background-color: rgb(127, 255, 212);
 }
-main .wrapper {
+main .main-content {
     width: 700px;
     height: 700px;
     margin: 0 auto;
