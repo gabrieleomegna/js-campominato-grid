@@ -46,5 +46,10 @@ function () {
 function squareGenerator () {
     const squareElement = document.createElement('div');
     squareElement.classList.add('square-item');
+    squareElement.addEventListener('click', 
+    function() {
+        squareElement.classList.add('bg-lightblue');
+        console.log(squareElement.innerHTML)
+    })
     return squareElement
 }
