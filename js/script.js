@@ -32,7 +32,19 @@ function gridGenerator(numberOfSquares, parent) {
 const wrapperElement = document.querySelector('div.wrapper');
 const btnPlayElement = document.querySelector('button#play');
 
+btnPlayElement.addEventListener('click', 
+function () {
+    for (let i = 1; i <= 100; i++) {
+        const gridElement = squareGenerator()
+        wrapperElement.appendChild(gridElement);
+        gridElement.append(i);
+    }
+})
+
+
+
 function squareGenerator () {
     const squareElement = document.createElement('div');
     squareElement.classList.add('square-item');
+    return squareElement
 }
