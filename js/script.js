@@ -34,10 +34,11 @@ const btnPlayElement = document.querySelector('button#play');
 
 btnPlayElement.addEventListener('click', 
 function () {
+    wrapperElement.innerHTML = ''
     for (let i = 1; i <= 100; i++) {
         const gridElement = squareGenerator()
         wrapperElement.appendChild(gridElement);
-        gridElement.append(i);
+        const numberInsideSquare = gridElement.append(i);
     }
 })
 
