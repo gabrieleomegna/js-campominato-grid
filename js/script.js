@@ -54,8 +54,8 @@ function generateNewGame (wrapperElement) {
 
         squareItem.addEventListener('click', 
         function() {
-            squareItem.classList.add('bg-lightblue');
-            squareContent.classList.remove('display-none');
+            squareItem.classList.toggle('bg-lightblue');
+            squareContent.classList.toggle('display-none');
             console.log(squareContent.innerHTML);
         })
     }
